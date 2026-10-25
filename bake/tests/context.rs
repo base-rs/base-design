@@ -17,7 +17,7 @@ fn packaged_crate_installs_both_skills_in_a_consumer() {
         .args([
             "package",
             "--package",
-            "core-design",
+            "base-design",
             "--allow-dirty",
             "--no-verify",
             "--locked",
@@ -26,7 +26,7 @@ fn packaged_crate_installs_both_skills_in_a_consumer() {
         ])
         .arg(&target)
         .output()
-        .expect("package core-design");
+        .expect("package base-design");
     assert!(
         output.status.success(),
         "packaging failed: {}",
@@ -55,7 +55,7 @@ fn packaged_crate_installs_both_skills_in_a_consumer() {
     fs::write(
         consumer.join("Cargo.toml"),
         format!(
-            "[package]\nname = \"design-consumer\"\nversion = \"0.0.0\"\nedition = \"2024\"\n\n[workspace]\n\n[dependencies]\ncore-design = {{ path = {package:?} }}\n"
+            "[package]\nname = \"design-consumer\"\nversion = \"0.0.0\"\nedition = \"2024\"\n\n[workspace]\n\n[dependencies]\nbase-design = {{ path = {package:?} }}\n"
         ),
     )
     .unwrap();
@@ -71,19 +71,19 @@ fn packaged_crate_installs_both_skills_in_a_consumer() {
     );
 
     let installer = Installer::discover(&consumer).unwrap();
-    let provider = installer.find_provider("core-design").unwrap().unwrap();
+    let provider = installer.find_provider("base-design").unwrap().unwrap();
     assert_eq!(provider.specification.context_path, package.join("context"));
     assert_eq!(provider.definitions.len(), 2);
 
-    let installed = installer.install(Some("core-design")).unwrap();
+    let installed = installer.install(Some("base-design")).unwrap();
     assert!(installed.context.is_empty());
     assert_eq!(
         installed.skills,
-        ["core-design-author", "core-design-review"]
+        ["base-design-author", "base-design-review"]
     );
     for definition in &provider.definitions {
         let Definition::Skill(skill) = definition else {
-            panic!("core-design should only distribute skills");
+            panic!("base-design should only distribute skills");
         };
         let path = consumer
             .join(".agents/skills")

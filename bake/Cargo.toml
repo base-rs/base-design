@@ -1,15 +1,17 @@
 [package]
-name = "core-design-bake"
+name = "base-design-bake"
 version = "0.0.0"
 edition = "2024"
 publish = false
 
 [dependencies]
 bake = ">=0.20, <1"
-core-project = ">=0.2.0"
+core-project = ">=0.1.0"
 
 [dev-dependencies]
 bake-agent-context = "0.4.0"
 flate2 = "1.1.10"
 tar = "0.4.46"
 tempfile = "3.27.0"
+
+bake-cargo = ">=0.5.3"

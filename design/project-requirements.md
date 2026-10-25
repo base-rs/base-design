@@ -8,7 +8,7 @@ Review must consider changes to requirements, including removals, alongside impl
 
 ## Rationale
 
-The purpose of `core-design` is to preserve specific user requirements as a project evolves. A review that silently weakens those requirements or substitutes confidence for evidence defeats that purpose.
+The purpose of `base-design` is to preserve specific user requirements as a project evolves. A review that silently weakens those requirements or substitutes confidence for evidence defeats that purpose.
 
 ## Scope
 

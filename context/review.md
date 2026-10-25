@@ -1,5 +1,5 @@
 ---
-name: core-design-review
+name: base-design-review
 description: Assess feature plans, implementation changes, and pull requests against project design/*.md requirements, including changes to the requirements themselves. Use before implementation and when preparing or reviewing changes in projects with design documents.
 metadata:
   type: skill
@@ -17,7 +17,7 @@ In a repository containing several projects, consult repository-wide requirement
 
 For a change review, establish the intended base and the exact proposed revision or working-tree diff. Inspect design documents at both revisions, including additions, edits, and deletions. Use the full proposed change relative to its intended base; if no base is available, state that limitation rather than claiming to have reviewed requirement history.
 
-Record which documents apply and why others do not. If there are no design documents at either revision, report that briefly; do not create requirements as a side effect of review. When the work introduces or changes an enduring user requirement, use `core-design-author` to capture it.
+Record which documents apply and why others do not. If there are no design documents at either revision, report that briefly; do not create requirements as a side effect of review. When the work introduces or changes an enduring user requirement, use `base-design-author` to capture it.
 
 ## Delegate focused reviews
 
@@ -48,6 +48,6 @@ Do not report a whole document as satisfied when a requirement within it is viol
 
 ## Reconcile and report
 
-The coordinating agent evaluates findings against user intent, resolves interactions between requirements, and fixes substantive issues within the authorized task. Surface unresolved conflicts without silently inventing precedence or changing requirements. When requirements need revision, use `core-design-author` and review that revision too.
+The coordinating agent evaluates findings against user intent, resolves interactions between requirements, and fixes substantive issues within the authorized task. Surface unresolved conflicts without silently inventing precedence or changing requirements. When requirements need revision, use `base-design-author` and review that revision too.
 
 After changes, re-review affected requirements and evidence against the final revision. Reuse unaffected assessments only when their evidence still applies. Summarize findings, deliberate requirement changes, and validation gaps concisely for the user or PR reviewer. Never describe an unverified requirement as passed. Follow the project's pull request workflow for its remaining checks and approvals.
