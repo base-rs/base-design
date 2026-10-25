@@ -1,5 +1,5 @@
 ---
-name: core-design-author
+name: base-design-author
 description: Capture, revise, or remove project-specific requirements in design/*.md when user requirements change, including performance targets, architectural boundaries, and behavioral contracts.
 metadata:
   type: skill
@@ -61,4 +61,4 @@ Keep active documents about current requirements. Link historical decisions sepa
 
 Check that a reviewer can identify a concrete violation, establish applicability, and obtain or identify the necessary evidence. Compare with related requirements for contradictions and duplication. Keep unresolved decisions explicit rather than presenting them as active requirements.
 
-Review edits and deletions against the original requirement and user intent. An implementation failing a requirement is a finding to resolve, not by itself a reason to weaken the requirement. Use `core-design-review` to assess the resulting requirements and implementation together.
+Review edits and deletions against the original requirement and user intent. An implementation failing a requirement is a finding to resolve, not by itself a reason to weaken the requirement. Use `base-design-review` to assess the resulting requirements and implementation together.

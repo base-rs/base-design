@@ -5,7 +5,7 @@ use std::process::Command;
 
 #[test]
 fn executable_lists_shared_project_tasks() {
-    let output = Command::new(env!("CARGO_BIN_EXE_core-design-bake"))
+    let output = Command::new(env!("CARGO_BIN_EXE_base-design-bake"))
         .arg("--list")
         .output()
         .expect("run Bake task executable");
@@ -26,7 +26,7 @@ fn executable_lists_shared_project_tasks() {
 
 #[test]
 fn executable_reports_unknown_tasks_as_failure() {
-    let output = Command::new(env!("CARGO_BIN_EXE_core-design-bake"))
+    let output = Command::new(env!("CARGO_BIN_EXE_base-design-bake"))
         .arg("unknown-task")
         .output()
         .expect("run Bake task executable");
