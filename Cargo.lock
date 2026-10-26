@@ -23,12 +23,12 @@ dependencies = [
 
 [[package]]
 name = "bake-agent-context"
-version = "0.4.1"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0e069e8d10d780d25c8fb8ecbb0fe949f216be176ca9d09bbd9ebc28f0d4969"
+checksum = "6e0c536a159ae7aa41ed8f5f1accda4dbbb8064eefeec9ca629fb02207f9a397"
 dependencies = [
  "bake",
- "core-markdown",
+ "base-markdown",
  "serde",
  "serde_json",
  "serde_yaml_ng",
@@ -36,14 +36,14 @@ dependencies = [
 
 [[package]]
 name = "bake-cargo"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6086b8aec80944f29db7cba8e47ab6feae679b9377dfb792c7ae5a401b8c6c5a"
+checksum = "79ff5b8e99d484d51e46ea5e4a76f1e86c8751a7c92e62fa6825ab8858042c4b"
 dependencies = [
  "bake",
  "bake-license",
  "bake-releases",
- "core-markdown",
+ "base-markdown",
  "serde",
  "serde_json",
  "tempfile",
@@ -53,12 +53,12 @@ dependencies = [
 
 [[package]]
 name = "bake-license"
-version = "0.2.4"
+version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8119abd93d0afb92bdd38bb08bd7ca5d2586cd3a043be8a6925a4fb2c4d5616"
+checksum = "6b873096492b2786ea7c0dd8ccc588b5919a052a13db753a5098950eb5e5e83e"
 dependencies = [
  "bake",
- "core-markdown",
+ "base-markdown",
  "tempfile",
 ]
 
@@ -75,34 +75,34 @@ dependencies = [
 
 [[package]]
 name = "bake-markdown"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71fff235edf5eebf6f9a35b1cfbac3cf8c9506102a965f66b7fd1b26f9982f10"
+checksum = "4fb954a7e1e164bab8c4eca17399a2e79848b6b3b3a27afc89b35ec71b8130d5"
 dependencies = [
  "bake",
- "core-markdown",
+ "base-markdown",
 ]
 
 [[package]]
 name = "bake-readme"
-version = "0.2.6"
+version = "0.2.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b18e824c1409a92a81044701d3b99d4d99d8e1220a3bf1fc280f8e2f8f80407b"
+checksum = "480bfb31790775eceb77a07726cfb1fb37e376bafcd68aa807047e3f0af09ffd"
 dependencies = [
  "bake",
- "core-markdown",
+ "base-markdown",
  "serde_json",
  "tempfile",
 ]
 
 [[package]]
 name = "bake-releases"
-version = "0.3.6"
+version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "da9c37e3728e6808b447770a8c2dcab8281750eb36d3a159e9278e1bc96a22c7"
+checksum = "d31e33b847a5896ba5723b0391243e56172689720f9325c2c92e1fc57189e505"
 dependencies = [
  "bake",
- "core-markdown",
+ "base-markdown",
  "tempfile",
 ]
 
@@ -122,16 +122,48 @@ name = "base-design"
 version = "0.1.0"
 
 [[package]]
+name = "base-design"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "46f2f8db06d87ff80f4f96e56336afcb338b96b444ee8de7fe8919601e8de9b9"
+
+[[package]]
 name = "base-design-bake"
 version = "0.0.0"
 dependencies = [
  "bake",
  "bake-agent-context",
  "bake-cargo",
- "core-project",
+ "base-project",
  "flate2",
  "tar",
  "tempfile",
+]
+
+[[package]]
+name = "base-markdown"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7cfd2825b6e08635abf3737d8e15d8445c9d74ed80cefb4b469a19c140e90f33"
+dependencies = [
+ "memchr",
+]
+
+[[package]]
+name = "base-project"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b9e9c9d8865b2e1e53ee684ed25190c2c61b990e9d7e912069ced53270a64d2f"
+dependencies = [
+ "bake",
+ "bake-agent-context",
+ "bake-cargo",
+ "bake-license",
+ "bake-markdown",
+ "bake-readme",
+ "bake-releases",
+ "bake-test",
+ "base-design 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -161,38 +193,6 @@ name = "cfg-if"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600"
-
-[[package]]
-name = "core-design"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4be086461795510f9e121dbafdb04bc8511ea26610ff185b7bba36d8747372b0"
-
-[[package]]
-name = "core-markdown"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f3be0ca6b051ea0a3f33f32c0e8c20172cb240f3b0ec26d9d5ec52e47dad9a7"
-dependencies = [
- "memchr",
-]
-
-[[package]]
-name = "core-project"
-version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a28b8812bbfe77ff479a1fee161deda0477bca647dcee3c93a84fbd4010a018"
-dependencies = [
- "bake",
- "bake-agent-context",
- "bake-cargo",
- "bake-license",
- "bake-markdown",
- "bake-readme",
- "bake-releases",
- "bake-test",
- "core-design",
-]
 
 [[package]]
 name = "crc32fast"
