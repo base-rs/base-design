@@ -32,7 +32,7 @@ Add this instruction to the project's agent guidance so requirements are conside
 
 ## Releasing
 
-Prepare a release with `cargo bake cargo:version:patch` (or `minor`, `major`, or `bump --version X.Y.Z`), commit with a `Release: vVERSION` trailer, then run `cargo bake cargo:release` and open a pull request. After review and merge, GitHub Actions publishes the release when the configured `crates-io` environment approves it. Follow the shared [Releasing skill](https://github.com/base-rs/base-project/blob/main/context/releasing.md) for the standard process.
+Prepare a release with `cargo bake cargo:version:patch` (or `minor`, `major`, or `bump --version X.Y.Z`), commit it with a `Release: vVERSION` trailer, then run `cargo bake cargo:release` and open a pull request. After review and merge, GitHub Actions publishes the release when the configured `crates-io` environment approves it, then creates or updates the matching GitHub Release from `releases.md`. Follow the shared [Releasing skill](https://github.com/base-rs/base-project/blob/main/context/releasing.md) for the standard process.
 
 ## Releases
 
@@ -55,10 +55,6 @@ See [releases.md](releases.md) for the full release history.
 
 Please open an issue or pull request on [GitHub](https://github.com/base-rs/base-design).
 
-The private `bake/` package uses `base-project` for development and release tasks. Run `cargo bake --regenerate` after changing task dependencies. Use `cargo bake test` for the workspace tests and `cargo bake test:coverage --all-targets true` for the standard coverage check. The tests package the crate and verify that a consumer can discover and install both skills from the packaged contents.
-
 ### Agent Context
 
-Run `cargo bake agent:context:install` to install shared context and skills. Use `cargo bake agent:context:list` and `cargo bake agent:context:show` to discover relevant guides, follow `agents.md` if present, and apply skills under `.agents/skills/`.
-
-Before planning or changing behavior, read applicable `design/*.md`. This crate's own skills are authored in `context/author.md` and `context/review.md`; use those sources when maintaining or reviewing its requirements. The installer discovers dependency guidance and excludes workspace members, so it does not install this crate's own skills into this checkout. Edit the source skill documents, and use their installed names in consuming projects.
+Run `cargo bake agent:context:install` to install shared context and skills. Use `cargo bake agent:context:list` and `cargo bake agent:context:show` to discover relevant guides, follow `agents.md` if present, and apply skills under `.agents/skills/`. The installer preserves repository-owned `agents.md`; it does not create or regenerate that file.
