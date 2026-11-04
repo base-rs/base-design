@@ -1,5 +1,4 @@
 ---
-name: base-design-review
 description: Assess feature plans, implementation changes, and pull requests against project design/*.md requirements, including changes to the requirements themselves. Use before implementation and when preparing or reviewing changes in projects with design documents.
 metadata:
   type: skill

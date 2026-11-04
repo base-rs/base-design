@@ -1,5 +1,9 @@
 # Releases
 
+## Unreleased
+
+- Derive the `base-design-author` and `base-design-review` skill names from the package and filename, instead of repeating them in front matter. Installed names are unchanged.
+
 ## v0.1.0
 
 - Publish as `base-design` in the `base-rs` organization, with package versions starting at 0.1.0.
