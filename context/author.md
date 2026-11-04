@@ -1,5 +1,4 @@
 ---
-name: base-design-author
 description: Capture, revise, or remove project-specific requirements in design/*.md when user requirements change, including performance targets, architectural boundaries, and behavioral contracts.
 metadata:
   type: skill
