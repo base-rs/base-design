@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Derive the `base-design-author` and `base-design-review` skill names from the package and filename, instead of repeating them in front matter. Installed names are unchanged.
+- Declare Rust 1.87, the Base default, as the minimum supported version in `rust-version`.
 
 ## v0.1.0
 
