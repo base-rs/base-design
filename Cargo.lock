@@ -128,12 +128,12 @@ dependencies = [
 [[package]]
 name = "base-design"
 version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "46f2f8db06d87ff80f4f96e56336afcb338b96b444ee8de7fe8919601e8de9b9"
 
 [[package]]
 name = "base-design"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "46f2f8db06d87ff80f4f96e56336afcb338b96b444ee8de7fe8919601e8de9b9"
+version = "0.1.1"
 
 [[package]]
 name = "base-design-bake"
@@ -171,7 +171,7 @@ dependencies = [
  "bake-readme",
  "bake-releases",
  "bake-test",
- "base-design 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "base-design 0.1.0",
  "base-security",
 ]
 

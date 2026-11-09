@@ -40,6 +40,11 @@ Prepare a release with `cargo bake cargo:release:patch` (or `minor`, `major`, or
 
 See [releases.md](releases.md) for the full release history.
 
+### v0.1.1
+
+- Derive the `base-design-author` and `base-design-review` skill names from the package and filename, instead of repeating them in front matter. Installed names are unchanged.
+- Declare Rust 1.87, the Base default, as the minimum supported version in `rust-version`.
+
 ### v0.1.0
 
 - Publish as `base-design` in the `base-rs` organization, with package versions starting at 0.1.0.
